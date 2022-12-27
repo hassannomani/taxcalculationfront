@@ -58,8 +58,13 @@
 
                 <div class="btn-container">
                     <div class="error">{{ errorMsg }}</div>
-                    <button mat-stroked-button color="primary" (click)="signup()" style="margin: -4% 35% 5%;">Login</button>
-                    
+                    <app-button
+                    [label]="buttonLabel"
+                    [color]="buttonColor" 
+                    [type]="buttonType"
+                    (click)="signup()"
+                    style="margin: -9% 35% 5%;"
+                    ></app-button>
                 </div>
                 
 

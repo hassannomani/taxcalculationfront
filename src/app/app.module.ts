@@ -12,6 +12,7 @@ import { LoginSignupMenuComponent } from './layout/login-signup-menu/login-signu
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
+import { ButtonComponent } from './uitools/button/button.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SignupComponent } from './signup/signup.component';
     MainMenuComponent,
     LoginSignupMenuComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,9 @@ export class SignupComponent {
   circle=""
   dob=""
   errorMsg=""
+  buttonLabel: string = "Sign Up";
+  buttonColor: string = "primary";
+  buttonType: string = "submit";
 
   signup(){
     if(this.username==""||this.password==""||this.email==""||this.tin==""||this.zone==""||this.circle==""||this.dob=="")
