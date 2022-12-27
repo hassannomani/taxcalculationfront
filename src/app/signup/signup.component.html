@@ -1,0 +1,68 @@
+
+
+    <!-- <div class="clear"></div> -->
+    <div class="login-container">
+        <div class="logo">NBR LOGIN</div>
+    
+        <div class="login-form">
+         
+
+        
+         
+
+                <p>
+                    <mat-form-field >
+                        <mat-label>Username</mat-label>
+                        <input matInput  [(ngModel)]="username" required>
+                    </mat-form-field>
+                
+                    <mat-form-field>
+                        <mat-label>TIN</mat-label>
+                        <input matInput type="number"  [(ngModel)]="tin" required>
+                    </mat-form-field>
+                </p>
+                <p> 
+                        <mat-form-field>
+                            <mat-label>Password</mat-label>
+                            <input matInput type="password"  [(ngModel)]="password" required>
+                        </mat-form-field>
+                  
+                        <mat-form-field>
+                            <mat-label>Confirm Password</mat-label>
+                            <input matInput type="password"  [(ngModel)]="cpassword" required>
+                        </mat-form-field>
+                    </p>
+               <p> 
+                        <mat-form-field>
+                            <mat-label>Email </mat-label>
+                            <input matInput type="email"  [(ngModel)]="email" required>
+                        </mat-form-field>
+                   
+                        <mat-form-field>
+                            <mat-label>Zone  </mat-label>
+                            <input matInput type="zone"  [(ngModel)]="zone" required>
+                        </mat-form-field>
+                    </p>
+               
+                <p> 
+                        <mat-form-field>
+                            <mat-label>Circle </mat-label>
+                            <input matInput type="circle"  [(ngModel)]="circle" required>
+                        </mat-form-field>
+                        
+                        <mat-form-field>
+                            <mat-label>Date of Birth </mat-label>
+                            <input matInput type="date"  [(ngModel)]="dob" required>
+                        </mat-form-field>
+                    </p>
+
+                <div class="btn-container">
+                    <div class="error">{{ errorMsg }}</div>
+                    <button mat-stroked-button color="primary" (click)="signup()" style="margin: -4% 35% 5%;">Login</button>
+                    
+                </div>
+                
+
+              
+        </div>
+    </div>
