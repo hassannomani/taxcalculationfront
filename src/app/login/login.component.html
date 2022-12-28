@@ -1,42 +1,46 @@
 <div class="login-container">
     <div class="logo">NBR LOGIN</div>
-
     <div class="login-form">
-       <!--<div class="form-group">
-        <label for="username">Username</label>
-        <input
-          type="text"
-          name="username"
-          class="form-control"
-          [(ngModel)]="username"
-        />
-      </div> -->
-    <p>
-        <mat-form-field class="example-full-width" appearance="fill">
+      <form class="example-form" [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="form-group">
+          <mat-form-field class="example-full-width">
             <mat-label>Username</mat-label>
-            <input matInput  [(ngModel)]="username" required>
-        </mat-form-field>
-    </p>
-    <p>
-        <mat-form-field class="example-full-width" appearance="fill">
+            <input
+            type="text"
+            name="username"
+            formControlName="username"
+            matInput
+            
+            />
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field class="example-full-width">
             <mat-label>Password</mat-label>
-            <input matInput type="password" [(ngModel)]="password" required>
-        </mat-form-field>
-    </p>
-      <!-- <div class="form-group">
-        <label for="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          class="form-control"
-          [(ngModel)]="password"
-        />
-      </div> -->
-      <div class="btn-container">
-        <div class="error">{{ errorMsg }}</div>
-        <button mat-stroked-button color="primary" (click)="login()">Login</button>
+            <input
+            type="password"
+            name="password"
+            formControlName="password"
+            matInput
+            
+            />
+          </mat-form-field>
+        </div>
+        
+        <div class="btn-container">
+         
+          <app-button
+          [label]="buttonLabel"
+          [color]="buttonColor" 
+          [type]="buttonType"
+          [disabled]="loginForm.get('username')?.invalid?true:false"
+          (click)="login()"
+          ></app-button><br>
+          <span *ngIf="loginForm.get('username')?.invalid &&
+          loginForm.get('username')?.errors?.['required']" style="color:red">Username is required</span><br>
+          <span *ngIf="loginForm.get('username')?.errors?.['minlength']" style="color:red">Username must contain 5 characters</span>
+        </div>
 
-      </div>
-
+      </form>
     </div>
   </div>

@@ -21,6 +21,8 @@ export class SignupComponent {
 
   signup(){
     if(this.username==""||this.password==""||this.email==""||this.tin==""||this.zone==""||this.circle==""||this.dob=="")
-    alert("Every field is mandatory")
+      alert("Every field is mandatory")
+    else
+      console.log('ghg')
   }
 }

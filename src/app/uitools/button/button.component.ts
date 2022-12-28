@@ -17,6 +17,10 @@ export class ButtonComponent implements OnInit {
   @Input()
   type: string = "";
 
+  
+  @Input()
+  disabled: boolean = false;
+
   ngOnInit(): void {
     //throw new Error('Method not implemented.');
   }

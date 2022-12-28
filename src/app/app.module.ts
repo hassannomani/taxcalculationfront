@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,9 +11,10 @@ import { MaterialExampleModule } from 'src/material.module';
 import { MainMenuComponent } from './layout/main-menu/main-menu.component';
 import { LoginSignupMenuComponent } from './layout/login-signup-menu/login-signup-menu.component';
 import { LoginComponent } from './login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 import { ButtonComponent } from './uitools/button/button.component';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { ButtonComponent } from './uitools/button/button.component';
     LoginSignupMenuComponent,
     LoginComponent,
     SignupComponent,
-    ButtonComponent
+    ButtonComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { ButtonComponent } from './uitools/button/button.component';
     BrowserAnimationsModule,
     FormsModule,
     MaterialExampleModule,
-   
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
