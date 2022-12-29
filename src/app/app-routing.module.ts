@@ -1,3 +1,5 @@
+import { ProfileComponent } from './profile/profile.component';
+import { ActivationComponent } from './activation/activation.component';
 import { SignupComponent } from './signup/signup.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -11,7 +13,11 @@ const routes: Routes = [
   {path: "footer", component: FooterComponent},
   {path: "login", component: LoginComponent},
   {path: "signup", component: SignupComponent},
-  {path: "list-taxpayer", component: ListComponent}
+  {path: "list-taxpayer", component: ListComponent},
+  {path: "activation/:code", component: ActivationComponent},
+  {path: "profile", component: ProfileComponent}
+
+
 ];
 
 @NgModule({

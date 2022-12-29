@@ -15,6 +15,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 import { ButtonComponent } from './uitools/button/button.component';
 import { ListComponent } from './list/list.component';
+import { ActivationComponent } from './activation/activation.component';
+import { ProfileComponent } from './profile/profile.component';
+import { LogoutMenuComponent } from './layout/logout-menu/logout-menu.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { ListComponent } from './list/list.component';
     LoginComponent,
     SignupComponent,
     ButtonComponent,
-    ListComponent
+    ListComponent,
+    ActivationComponent,
+    ProfileComponent,
+    LogoutMenuComponent
   ],
   imports: [
     BrowserModule,

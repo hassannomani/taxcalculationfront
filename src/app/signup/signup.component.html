@@ -5,69 +5,135 @@
         <div class="logo">NBR LOGIN</div>
     
         <div class="login-form">
-         
-
-        
-         
-
-                <p>
-                    <mat-form-field >
-                        <mat-label>Username</mat-label>
-                        <input matInput  [(ngModel)]="username" required>
-                    </mat-form-field>
+            <form class="example-form" [formGroup]="signUpForm" #formDir="ngForm" (ngSubmit)="signup()">
                 
-                    <mat-form-field>
+                <div class="holder">
+                    <div class="wrapper">
+                        <mat-form-field>
+                            <mat-label>Username</mat-label>
+                            <input
+                            type="text"
+                            name="username"
+                            formControlName="username"
+                            matInput
+                            />
+                        </mat-form-field>
+                        <span *ngIf="signUpForm.get('username')?.errors?.['minlength']" style="color:red">Username must contain 4 characters</span>
+                    </div>
+                    <div class="wrapper">
+                      <mat-form-field class="">
                         <mat-label>TIN</mat-label>
-                        <input matInput type="number"  [(ngModel)]="tin" required>
-                    </mat-form-field>
-                </p>
-                <p> 
-                        <mat-form-field>
-                            <mat-label>Password</mat-label>
-                            <input matInput type="password"  [(ngModel)]="password" required>
-                        </mat-form-field>
-                  
-                        <mat-form-field>
-                            <mat-label>Confirm Password</mat-label>
-                            <input matInput type="password"  [(ngModel)]="cpassword" required>
-                        </mat-form-field>
-                    </p>
-               <p> 
-                        <mat-form-field>
-                            <mat-label>Email </mat-label>
-                            <input matInput type="email"  [(ngModel)]="email" required>
-                        </mat-form-field>
-                   
-                        <mat-form-field>
-                            <mat-label>Zone  </mat-label>
-                            <input matInput type="zone"  [(ngModel)]="zone" required>
-                        </mat-form-field>
-                    </p>
-               
-                <p> 
-                        <mat-form-field>
-                            <mat-label>Circle </mat-label>
-                            <input matInput type="circle"  [(ngModel)]="circle" required>
-                        </mat-form-field>
-                        
-                        <mat-form-field>
-                            <mat-label>Date of Birth </mat-label>
-                            <input matInput type="date"  [(ngModel)]="dob" required>
-                        </mat-form-field>
-                    </p>
+                        <input
+                        type="number"
+                        name="tin"
+                        formControlName="tin"
+                        matInput
+                        />
+                      </mat-form-field>
+                      <span *ngIf="signUpForm.get('tin')?.errors?.['minlength']" style="color:red">Username must contain 12 characters</span>
 
-                <div class="btn-container">
-                    <div class="error">{{ errorMsg }}</div>
-                    <app-button
-                    [label]="buttonLabel"
-                    [color]="buttonColor" 
-                    [type]="buttonType"
-                    (click)="signup()"
-                    style="margin: -9% 35% 5%;"
-                    ></app-button>
+                    </div>
                 </div>
-                
+                <div class="holder">
+                    <div class="wrapper">
+                        <mat-form-field class="">
+                            <mat-label>Password</mat-label>
+                            <input
+                            type="password"
+                            name="password"
+                            formControlName="password"
+                            matInput
+                            />
+                        </mat-form-field>
+                        <span *ngIf="signUpForm.get('password')?.errors?.['minlength']" style="color:red">password must contain 4 characters</span>
 
+                    </div>
+                    <div class="wrapper">
+
+                        <mat-form-field class="">
+                        <mat-label>Confirm Password</mat-label>
+                        <input
+                        type="password"
+                        name="cpassword"
+                        formControlName="cpassword"
+                        matInput
+                        />
+                        </mat-form-field>
+                        <span *ngIf="signUpForm.get('cpassword')?.errors?.['minlength']" style="color:red">password must contain 4 characters</span>
+
+                    </div>
+                </div>
+                <div class="holder">
+                    <div class="wrapper">    
+                        <mat-form-field class="">
+                            <mat-label>Email</mat-label>
+                            <input
+                            type="email"
+                            name="email"
+                            formControlName="email"
+                            matInput
+                            />
+                          </mat-form-field>
+                          <span *ngIf="signUpForm.controls.email?.errors?.['email']" style="color:red">Email Format invalid</span>
+
+                    </div>
+                    <div class="wrapper">    
+                          <mat-form-field class="">
+                            <mat-label>Zone</mat-label>
+                            <input
+                            type="text"
+                            name="zone"
+                            formControlName="zone"
+                            matInput
+                            />
+                          </mat-form-field>
+                          <span *ngIf="formDir.submitted && signUpForm.controls.zone?.errors?.['required']" style="color:red">Zone is required</span>
+
+                    </div>
+                </div>
+               
+                <div class="holder">
+                    <div class="wrapper">    
+ 
+                        <mat-form-field class="">
+                        <mat-label>Circle</mat-label>
+                        <input
+                        type="text"
+                        name="circle"
+                        formControlName="circle"
+                        matInput
+                        />
+                      </mat-form-field>
+                      <span *ngIf="formDir.submitted && signUpForm.controls.circle?.errors?.['required']" style="color:red">Circle is required</span>
+
+                    </div>
+                    <div class="wrapper">    
+    
+                      <mat-form-field class="">
+                        <mat-label>Date of Birth</mat-label>
+                        <input
+                        type="date"
+                        name="dob"
+                        formControlName="dob"
+                        matInput
+                        />
+                      </mat-form-field>
+                      <span *ngIf="formDir.submitted && signUpForm.controls.dob?.errors?.['required']" style="color:red">DOB is required</span>
+
+                    </div>
+                </div>
+                    <div class="btn-container">
+                        <div class="error">{{ errorMsg }}</div>
+                        <app-button
+                        [label]="buttonLabel"
+                        [color]="buttonColor" 
+                        [type]="buttonType"
+                        (click)="signup()"
+                        style="margin: -9% 35% 5%;"
+                        ></app-button>
+                    </div>
+                    <span style="color:green;font-weight: 600;margin-left: 14%;" *ngIf="successShow">{{successMsg}}</span>
+                </form>
               
         </div>
     </div>

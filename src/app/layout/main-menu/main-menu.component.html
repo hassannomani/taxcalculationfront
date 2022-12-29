@@ -8,5 +8,6 @@
         </button>
     </a>
 
-    <app-login-signup-menu></app-login-signup-menu>
+    <app-login-signup-menu *ngIf="showlogIn"></app-login-signup-menu>
+    <app-logout-menu *ngIf="!showlogIn"></app-logout-menu>
    </div>
