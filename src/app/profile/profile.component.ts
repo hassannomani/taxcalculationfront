@@ -17,11 +17,15 @@ export class ProfileComponent implements OnInit{
     circle: "",
     dob: new Date()
   };
+
+
   constructor(
     private alllistService:  AlllistService
   ){}
 
   ngOnInit(){
+
+
     let retrievedObject = localStorage.getItem('id');
     let finalId =  retrievedObject?JSON.parse(retrievedObject):"";
     console.log(finalId)
