@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { storageEntity, LocalstorageService } from 'src/app/service/storage/localstorage.service';
+import { SigninService } from 'src/app/service/login/signin.service';
 
 @Component({
   selector: 'app-logout-menu',
@@ -9,18 +11,29 @@ import { Router } from '@angular/router';
 export class LogoutMenuComponent implements OnInit{
   username = ""
   constructor(
-    private router: Router
+    private router: Router,
+    private localstorageServ: LocalstorageService,
+    private signinserv: SigninService
     ){}
   ngOnInit(){
-    let retrievedObject = localStorage.getItem('username');
-    if(retrievedObject)
-      this.username=retrievedObject;
+    let retrievedObject = this.localstorageServ.getStorageItems();
+
+    if(retrievedObject.username)
+      this.username=retrievedObject.username;
     else
       this.username="";
   }
   logout(){
-    localStorage.clear();
-    this.router.navigate(['login']);
+    this.localstorageServ.deletetorageItems();
+    // this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+    //   this.router.navigate(['/login']);
+    // }); 
+    this.signinserv
+      .logout()
+      .subscribe(data=>{
+        this.router.navigate(['login']);
+      })
+    //this.router.navigate(['login']);
 
   }
  

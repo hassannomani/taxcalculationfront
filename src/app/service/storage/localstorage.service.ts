@@ -33,5 +33,10 @@ export class LocalstorageService {
   }
   deletetorageItems(){
     localStorage.clear();
+    return {
+      "id": "",
+      "username": "",
+      "token": ""
+    };
   }
 }

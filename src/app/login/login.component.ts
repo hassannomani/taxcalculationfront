@@ -2,7 +2,7 @@ import { SigninService, signedInUser } from './../service/login/signin.service';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { storageEntity,LocalstorageService } from '../service/storage/localstorage.service';
 //import { ToBeSignedInUser,SigninService } from './../service/users/alllist.service';
 
 @Component({
@@ -23,7 +23,8 @@ export class LoginComponent {
   buttonType: string = "submit"
   constructor(
     private signinService: SigninService,
-    private router: Router
+    private router: Router,
+    private localstorageser: LocalstorageService
     ){}
 
   login(){
@@ -37,10 +38,14 @@ export class LoginComponent {
         
         next: (data) => {
           if(data?.token!=""){
-            localStorage.setItem('token', JSON.stringify(data.token));
-            localStorage.setItem('id', JSON.stringify(data.id));
-            localStorage.setItem('username', JSON.stringify(data.username));
-            this.router.navigate(['profile']);
+            // localStorage.setItem('token', JSON.stringify(data.token));
+            // localStorage.setItem('id', JSON.stringify(data.id));
+            // localStorage.setItem('username', JSON.stringify(data.username));
+            this.localstorageser.saveStorageItems(data)
+            this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+              this.router.navigate(['profile']);
+            }); 
+            //this.router.navigate(['profile']);
 
           } 
           else{

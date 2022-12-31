@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TaxPayer, AlllistService } from './../service/users/alllist.service';
-
+import { storageEntity,LocalstorageService } from '../service/storage/localstorage.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -20,14 +20,14 @@ export class ProfileComponent implements OnInit{
 
 
   constructor(
-    private alllistService:  AlllistService
+    private alllistService:  AlllistService,
+    private localstorageServ: LocalstorageService
   ){}
 
   ngOnInit(){
 
-
-    let retrievedObject = localStorage.getItem('id');
-    let finalId =  retrievedObject?JSON.parse(retrievedObject):"";
+    let retrievedObject = this.localstorageServ.getStorageItems();
+    let finalId =  retrievedObject.id?JSON.parse(retrievedObject.id):"";
     console.log(finalId)
     this.alllistService
       .getATaxPayer(finalId)

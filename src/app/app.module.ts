@@ -18,6 +18,7 @@ import { ListComponent } from './list/list.component';
 import { ActivationComponent } from './activation/activation.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LogoutMenuComponent } from './layout/logout-menu/logout-menu.component';
+import { ReturnSubmitComponent } from './return-submit/return-submit.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LogoutMenuComponent } from './layout/logout-menu/logout-menu.component'
     ListComponent,
     ActivationComponent,
     ProfileComponent,
-    LogoutMenuComponent
+    LogoutMenuComponent,
+    ReturnSubmitComponent
   ],
   imports: [
     BrowserModule,
