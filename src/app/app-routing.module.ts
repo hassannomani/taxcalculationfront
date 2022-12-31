@@ -7,6 +7,7 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { ListComponent } from './list/list.component';
+import { ReturnSubmitComponent } from './return-submit/return-submit.component';
 
 const routes: Routes = [
   {path: "header", component: HeaderComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: "signup", component: SignupComponent},
   {path: "list-taxpayer", component: ListComponent},
   {path: "activation/:code", component: ActivationComponent},
-  {path: "profile", component: ProfileComponent}
+  {path: "profile", component: ProfileComponent},
+  {path: "return-submit", component: ReturnSubmitComponent}
 
 
 ];
