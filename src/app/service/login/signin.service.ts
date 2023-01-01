@@ -13,7 +13,7 @@ export class SigninService {
 
   private url : string ='http://localhost:8080/api/v1/users/login';
   private url1 : string ='http://localhost:8080/api/v1/users/logout';
-
+ 
   constructor(private http: HttpClient,
     private localstorageserv: LocalstorageService) {}
 
@@ -31,6 +31,12 @@ export class SigninService {
   }
 
   loginStatusChange(): Observable<boolean> {
-    return this.loggedIn.asObservable();
+
+    let object = this.localstorageserv.getStorageItems()
+    if(object.token!=""){
+       this.loggedIn.next(true);
+    }
+    return this.loggedIn.asObservable()
+    //return this.loggedIn.asObservable();
   }
 }

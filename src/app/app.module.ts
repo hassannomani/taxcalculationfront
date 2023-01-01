@@ -19,6 +19,8 @@ import { ActivationComponent } from './activation/activation.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LogoutMenuComponent } from './layout/logout-menu/logout-menu.component';
 import { ReturnSubmitComponent } from './return-submit/return-submit.component';
+import { PaymentComponent } from './payment/payment.component';
+
 
 @NgModule({
   declarations: [
@@ -34,16 +36,17 @@ import { ReturnSubmitComponent } from './return-submit/return-submit.component';
     ActivationComponent,
     ProfileComponent,
     LogoutMenuComponent,
-    ReturnSubmitComponent
+    ReturnSubmitComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    MaterialExampleModule,
     ReactiveFormsModule,
-    HttpClientModule
+    MaterialExampleModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

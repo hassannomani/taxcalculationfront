@@ -1,7 +1,7 @@
 <div class="login-container">
     <div class="logo"> LOGIN</div>
     <div class="login-form">
-      <form class="example-form" [formGroup]="loginForm" (ngSubmit)="login()">
+      <form class="example-form" [formGroup]="loginForm" #formDir="ngForm" (ngSubmit)="login()">
         <div class="form-group">
           <mat-form-field class="example-full-width">
             <mat-label>Username</mat-label>
@@ -13,9 +13,9 @@
             
             />
           </mat-form-field>
-           <span *ngIf="loginForm.get('username')?.invalid &&
+           <span *ngIf="formDir.submitted&& loginForm.get('username')?.invalid &&
           loginForm.get('username')?.errors?.['required']" style="color:red">Username is required</span><br>
-          <span *ngIf="loginForm.get('username')?.errors?.['minlength']" style="color:red">Username must contain 5 characters</span>
+          <span *ngIf="formDir.submitted&&loginForm.get('username')?.errors?.['minlength']" style="color:red">Username must contain 4 characters</span>
         </div>
         <div class="form-group">
           <mat-form-field class="example-full-width">
@@ -28,6 +28,8 @@
             
             />
           </mat-form-field>
+          <span *ngIf="formDir.submitted&& loginForm.get('password')?.invalid &&
+          loginForm.get('password')?.errors?.['required']" style="color:red">Password is required</span><br>
         </div>
         
         <div class="btn-container">
@@ -41,7 +43,7 @@
           ></app-button><br>
          
         </div>
-
+        <p style="color:red" *ngIf="failed">{{errorMsg}}</p>
       </form>
     </div>
   </div>

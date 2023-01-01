@@ -21,6 +21,7 @@ export class LoginComponent {
   buttonLabel: string= "Log In"
   buttonColor: string = "primary"
   buttonType: string = "submit"
+  errorMsg: string = ""
   constructor(
     private signinService: SigninService,
     private router: Router,
@@ -53,7 +54,12 @@ export class LoginComponent {
           }
         },
         error: (e) => {
+          console.log(e)
+          console.log(e.error)
+
+          this.errorMsg = e.error
           this.failed = true
+
         }
         
       });

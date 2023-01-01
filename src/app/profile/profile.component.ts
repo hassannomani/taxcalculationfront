@@ -1,3 +1,4 @@
+import { FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { TaxPayer, AlllistService } from './../service/users/alllist.service';
 import { storageEntity,LocalstorageService } from '../service/storage/localstorage.service';
@@ -17,6 +18,10 @@ export class ProfileComponent implements OnInit{
     circle: "",
     dob: new Date()
   };
+
+  toppings = new FormControl('');
+
+  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
 
 
   constructor(
