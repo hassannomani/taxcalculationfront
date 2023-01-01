@@ -1,1 +1,46 @@
-<p>payment works!</p>
+<form class="example-form" [formGroup]="paymentForm" #formDir="ngForm" (ngSubmit)="paymentSubmit()">    
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>TIN</mat-label>
+          <input matInput formControlName="tin">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field appearance="fill" matInput class="example-full-width">
+          <mat-label>Select Payment Method</mat-label>
+          <select matNativeControl required formControlName="method" >
+            <option value="bKash">bKash</option> 
+            <option value="Nagad">Nagad</option>
+            <option value="Upay">Upay</option>
+            <option value="Tap">Tap</option>
+          </select>
+        </mat-form-field>
+    </td>
+    </tr>
+    </table>
+    <table class="example-full-width" cellspacing="0"><tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Mobile No</mat-label>
+            <input matInput formControlName="mobile">
+          </mat-form-field>
+        </td>
+        <td>
+        <mat-form-field class="example-full-width">
+            <mat-label>PIN</mat-label>
+            <input matInput formControlName="pin">
+        </mat-form-field>
+        </td>
+    </tr>
+    </table>
+    <table class="example-full-width" cellspacing="0">
+        <tr class="clear:both;">
+        <app-button
+          [label]="buttonLabel"
+          [color]="buttonColor" 
+          [type]="buttonType"
+          ></app-button>
+        </tr>
+    </table>
+    </form>
