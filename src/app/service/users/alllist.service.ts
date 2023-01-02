@@ -12,6 +12,15 @@ export interface TaxPayer {
   circle: string,
   dob: Date
   }
+  export interface Returns{
+    uuid: string,
+    tinNo: string,
+    amount: string,
+    assessmentYear: string,
+    getway: string,
+    mobile: string,
+    created_at: string
+  }
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +30,7 @@ export class AlllistService {
   //private url : string ='https://api.github.com/users';
   private url : string ='http://localhost:8080/api/v1/users/all';
   private url1 : string ='http://localhost:8080/api/v1/users/profile/';
+  private url2 : string ='http://localhost:8080/api/v1/payments/all/';
 
   constructor(private http: HttpClient) {}
 
@@ -32,5 +42,9 @@ export class AlllistService {
     return this.http.get<TaxPayer>(this.url1+id)
   }
 
+  
+  getReturns(): Observable<Returns[]>{
+    return this.http.get<Returns[]>(this.url)
+  }
 
 }

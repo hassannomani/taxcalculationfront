@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TaxPayer, AlllistService } from './../service/users/alllist.service';
+import { TaxPayer, AlllistService, Returns } from './../service/users/alllist.service';
 
 
 @Component({
@@ -18,11 +18,11 @@ export class ListReturnComponent implements OnInit{
 
     ngOnInit(){
       this.alllistService
-        .getTaxPayers()
+        .getReturns()
         .subscribe(data => {
           console.log(data)
-          this.tUsers = data;
-          this.displayedColumns = [ 'uuid','username','email','role','tin','zone','circle','dob']
+          this.returns = data;
+          this.displayedColumns = [ 'tinNo','amount','Action']
         });
     }
 }
