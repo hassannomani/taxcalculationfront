@@ -24,10 +24,12 @@ export class SignupComponent {
   buttonLabel: string = "Sign Up";
   buttonColor: string = "primary";
   buttonType: string = "submit";
+  showSpinner: boolean = false;
   constructor(
     private registrationService: RegistrationService
     ){}
   signup(){
+    this.showSpinner = true
     // if(this.username==""||this.password==""||this.email==""||this.tin==""||this.zone==""||this.circle==""||this.dob=="")
     //   alert("Every field is mandatory")
     // else
@@ -52,6 +54,7 @@ export class SignupComponent {
         console.log(data)
         if(data?.uuid)
           this.successShow= true
+          this.showSpinner = false
           this.signUpForm.reset();
       });
     }

@@ -129,9 +129,12 @@
                         [color]="buttonColor" 
                         [type]="buttonType"
                         (click)="signup()"
-                        style="margin: -9% 35% 5%;"
+                        style="margin: -9% 5% 5% 35%;"
                         ></app-button>
+                        <mat-spinner *ngIf="showSpinner" style="width:50px;height:50px;display: inline-block;"></mat-spinner>
                     </div>
+                   
+
                     <span style="color:green;font-weight: 600;margin-left: 14%;" *ngIf="successShow">{{successMsg}}</span>
                 </form>
               

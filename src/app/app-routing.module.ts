@@ -1,3 +1,5 @@
+import { ReturnSubmittedComponent } from './return-submitted/return-submitted.component';
+import { AboutComponent } from './about/about.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ActivationComponent } from './activation/activation.component';
 import { SignupComponent } from './signup/signup.component';
@@ -20,6 +22,8 @@ const routes: Routes = [
   {path: "profile", component: ProfileComponent},
   {path: "return-submit", component: ReturnSubmitComponent},
   {path: "payment", component: PaymentComponent},
+  {path: "about", component: AboutComponent},
+  {path: "submitted", component: ReturnSubmittedComponent},
 
   // {path: "", component: LoginComponent},
 

@@ -1,18 +1,13 @@
 <div class="menu-button">
     <button mat-button>Home</button>
-    <button mat-button>About</button>
+    <a routerLink = "about">
+        <button mat-button>
+            About
+        </button>
+     </a>
     <button mat-button>Contact Us</button>
-    <a routerLink = "list-taxpayer">
-        <button mat-button>
-        List Tax Payer
-        </button>
-    </a>   
-    <a routerLink = "return-submit">
-        <button mat-button>
-        Submit Return
-        </button>
-    </a>
-
+    <app-admin-menu *ngIf="!showUserMenu&&!showlogIn"></app-admin-menu>
+    <app-taxpayer-menu *ngIf="showUserMenu&&!showlogIn"></app-taxpayer-menu>
     <app-login-signup-menu *ngIf="showlogIn"></app-login-signup-menu>
     <app-logout-menu *ngIf="!showlogIn"></app-logout-menu>
    </div>

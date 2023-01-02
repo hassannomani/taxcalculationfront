@@ -33,7 +33,7 @@ export class SigninService {
   loginStatusChange(): Observable<boolean> {
 
     let object = this.localstorageserv.getStorageItems()
-    if(object.token!=""){
+    if(object.token!=""&&object.token!=null){
        this.loggedIn.next(true);
     }
     return this.loggedIn.asObservable()

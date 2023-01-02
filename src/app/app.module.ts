@@ -20,6 +20,11 @@ import { ProfileComponent } from './profile/profile.component';
 import { LogoutMenuComponent } from './layout/logout-menu/logout-menu.component';
 import { ReturnSubmitComponent } from './return-submit/return-submit.component';
 import { PaymentComponent } from './payment/payment.component';
+import { TaxpayerMenuComponent } from './layout/taxpayer-menu/taxpayer-menu.component';
+import { AdminMenuComponent } from './layout/admin-menu/admin-menu.component';
+import { AboutComponent } from './about/about.component';
+import { ReturnSubmittedComponent } from './return-submitted/return-submitted.component';
+import { ListReturnComponent } from './list-return/list-return.component';
 
 
 @NgModule({
@@ -37,7 +42,12 @@ import { PaymentComponent } from './payment/payment.component';
     ProfileComponent,
     LogoutMenuComponent,
     ReturnSubmitComponent,
-    PaymentComponent
+    PaymentComponent,
+    TaxpayerMenuComponent,
+    AdminMenuComponent,
+    AboutComponent,
+    ReturnSubmittedComponent,
+    ListReturnComponent
   ],
   imports: [
     BrowserModule,
