@@ -9,7 +9,11 @@
             About
         </button>
      </a>
-    <button mat-button>Contact Us</button>
+     <a routerLink = "contact">
+        <button mat-button>
+            Contact Us
+        </button>
+     </a>
     <app-admin-menu *ngIf="!showUserMenu&&!showlogIn"></app-admin-menu>
     <app-taxpayer-menu *ngIf="showUserMenu&&!showlogIn"></app-taxpayer-menu>
     <app-login-signup-menu *ngIf="showlogIn"></app-login-signup-menu>
