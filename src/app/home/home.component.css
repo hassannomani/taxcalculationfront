@@ -1,0 +1,25 @@
+.container {
+    margin-top: 80px;
+    text-align: center;
+}
+img.tension {
+    height: 250px;
+    width: 250px;
+}
+img.happy {
+    height: 224px;
+    width: auto;
+}
+.example-card {
+    width: 30%;
+    float: left;
+    margin-right: 3%;
+  }
+img.mat-mdc-card-image.mdc-card__media {
+    width: 35%;
+    height: auto;
+    margin-left: 30%;
+}
+mat-card-title{
+    text-align: center;
+}

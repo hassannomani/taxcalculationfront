@@ -26,6 +26,7 @@ import { AboutComponent } from './about/about.component';
 import { ReturnSubmittedComponent } from './return-submitted/return-submitted.component';
 import { ListReturnComponent } from './list-return/list-return.component';
 import { ReturnDetailComponent } from './return-detail/return-detail.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { ReturnDetailComponent } from './return-detail/return-detail.component';
     AboutComponent,
     ReturnSubmittedComponent,
     ListReturnComponent,
-    ReturnDetailComponent
+    ReturnDetailComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
