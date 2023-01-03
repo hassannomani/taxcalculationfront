@@ -25,6 +25,7 @@ import { AdminMenuComponent } from './layout/admin-menu/admin-menu.component';
 import { AboutComponent } from './about/about.component';
 import { ReturnSubmittedComponent } from './return-submitted/return-submitted.component';
 import { ListReturnComponent } from './list-return/list-return.component';
+import { ReturnDetailComponent } from './return-detail/return-detail.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { ListReturnComponent } from './list-return/list-return.component';
     AdminMenuComponent,
     AboutComponent,
     ReturnSubmittedComponent,
-    ListReturnComponent
+    ListReturnComponent,
+    ReturnDetailComponent
   ],
   imports: [
     BrowserModule,

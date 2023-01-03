@@ -1,3 +1,4 @@
+import { ListReturnComponent } from './list-return/list-return.component';
 import { ReturnSubmittedComponent } from './return-submitted/return-submitted.component';
 import { AboutComponent } from './about/about.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -11,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { ListComponent } from './list/list.component';
 import { ReturnSubmitComponent } from './return-submit/return-submit.component';
 import { PaymentComponent } from './payment/payment.component';
+import { ReturnDetailComponent } from './return-detail/return-detail.component';
 
 const routes: Routes = [
   {path: "header", component: HeaderComponent},
@@ -24,6 +26,8 @@ const routes: Routes = [
   {path: "payment", component: PaymentComponent},
   {path: "about", component: AboutComponent},
   {path: "submitted", component: ReturnSubmittedComponent},
+  {path: "returns", component: ListReturnComponent},
+  {path: "return-detail/:uuid", component: ReturnDetailComponent}
 
   // {path: "", component: LoginComponent},
 

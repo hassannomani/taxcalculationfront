@@ -1,4 +1,7 @@
-<table mat-table [dataSource]="tUsers" class="mat-elevation-z8">
+<div *ngIf="failed" style="text-align: center; margin-top: 50px;">
+    <p style="color:red;">Data Couldn't be loaded</p>
+</div>
+<table mat-table [dataSource]="tUsers" class="mat-elevation-z8" *ngIf="success">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->

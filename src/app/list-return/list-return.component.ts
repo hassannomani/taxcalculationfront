@@ -22,7 +22,7 @@ export class ListReturnComponent implements OnInit{
         .subscribe(data => {
           console.log(data)
           this.returns = data;
-          this.displayedColumns = [ 'tinNo','amount','Action']
+          this.displayedColumns = [ 'tinNo','amount','action']
         });
     }
 }

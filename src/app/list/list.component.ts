@@ -11,6 +11,9 @@ export class ListComponent implements OnInit{
 
   tUsers: TaxPayer[] = [];
   displayedColumns:string[]=[]; 
+  success: boolean = false
+  failed: boolean = false
+
   //labelPosition: string = "right";
 
   constructor(
@@ -21,10 +24,26 @@ export class ListComponent implements OnInit{
   ngOnInit(){
     this.alllistService
       .getTaxPayers()
-      .subscribe(data => {
-        console.log(data)
-        this.tUsers = data;
-        this.displayedColumns = [ 'uuid','username','email','role','tin','zone','circle','dob']
+      
+      .subscribe({
+        // console.log(data)
+        // this.tUsers = data;
+        // this.displayedColumns = [ 'uuid','username','email','role','tin','zone','circle','dob']
+        next: (data) => {
+          if(data.length){
+            this.tUsers = data;
+            this.displayedColumns = [ 'uuid','username','email','role','tin','zone','circle','dob']
+            this.success = true
+          } 
+          else{
+            this.failed = true
+            this.success= false
+          }
+        },
+        error: (e) => {
+          this.failed = true
+          this.success= false;
+        }  
       });
   }
 }
