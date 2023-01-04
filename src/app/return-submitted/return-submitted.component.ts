@@ -14,7 +14,7 @@ export class ReturnSubmittedComponent implements OnInit{
   ){}
   returnSbmtd: submittedReturn[] = []
   thisYearSubmitted : boolean= false
-  displayedColumns: string[] = ['tin','assessmentYear','amount','salary', 'houseRent','festivalBonus' ,'investment', 'sourceTax'];
+  displayedColumns: string[] = ['tin','assessmentYear','amount','action'];
   columnsToDisplay: string[] = this.displayedColumns.slice();
   ngOnInit(): void {
       let tin =this.storageServ.getStorageItems().tin;

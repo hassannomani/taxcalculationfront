@@ -6,6 +6,8 @@
     background-size: content;
     background-repeat: no-repeat;
     position: relative;
+    background-position: 16% 53%;
+    background-size: 20%;
 }
 .login-container .logo {
     font-size: 40px;

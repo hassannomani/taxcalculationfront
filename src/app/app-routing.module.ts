@@ -1,3 +1,4 @@
+import { AcknowledgementComponent } from './acknowledgement/acknowledgement.component';
 import { ListReturnComponent } from './list-return/list-return.component';
 import { ReturnSubmittedComponent } from './return-submitted/return-submitted.component';
 import { AboutComponent } from './about/about.component';
@@ -32,7 +33,8 @@ const routes: Routes = [
   {path: "return-detail/:uuid", component: ReturnDetailComponent},
   {path: "home", component: HomeComponent},
   {path: "contact", component: ContactComponent},
-  {path: "", component: HomeComponent}
+  {path: "", component: HomeComponent},
+  {path: "acknowledgement", component: AcknowledgementComponent},
 
   // {path: "", component: LoginComponent},
 

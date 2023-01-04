@@ -28,6 +28,7 @@ import { ListReturnComponent } from './list-return/list-return.component';
 import { ReturnDetailComponent } from './return-detail/return-detail.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
+import { AcknowledgementComponent } from './acknowledgement/acknowledgement.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { ContactComponent } from './contact/contact.component';
     ListReturnComponent,
     ReturnDetailComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    AcknowledgementComponent
   ],
   imports: [
     BrowserModule,

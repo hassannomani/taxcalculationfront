@@ -22,6 +22,18 @@ export interface TaxPayer {
     mobile: string,
     created_at: string
   }
+  export interface ReturnsSubmitted{
+    uuid: string,
+    assessmentYear: string,
+    salary: string,
+    houseRent: string,
+    sourceTax: string,
+    festivalBonus: string,
+    investment: string,
+    gender: string,
+    tin: string,
+    amount: string
+  }
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +45,8 @@ export class AlllistService {
   private url1 : string ='http://localhost:8080/api/v1/users/profile/';
   private url2 : string ='http://localhost:8080/api/v1/payment/all';
   private url3 : string ='http://localhost:8080/api/v1/payment/payment-id/';
+  private url4 : string ='http://localhost:8080/api/v1/payment/payment-tin';
+  private url5 : string ='http://localhost:8080/api/v1/calculation/calculation-tin';
 
   constructor(
     private http: HttpClient,
@@ -71,6 +85,16 @@ export class AlllistService {
 
   getAReturn(uuid : any): Observable<Returns>{
     return this.http.get<Returns>(this.url3+uuid)
+  }
+
+  getAckowledgmentBYTin(tin : any, year:any): Observable<Returns>{
+    console.log(year)
+    return this.http.get<Returns>(this.url4+"?tin="+tin+"&year="+year)
+  }
+
+  getReturnBYTin(tin : any, year:any): Observable<ReturnsSubmitted>{
+    console.log(year)
+    return this.http.get<ReturnsSubmitted>(this.url5+"?tin="+tin+"&year="+year)
   }
 
 }
