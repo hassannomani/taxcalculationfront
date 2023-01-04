@@ -29,6 +29,7 @@ import { ReturnDetailComponent } from './return-detail/return-detail.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { AcknowledgementComponent } from './acknowledgement/acknowledgement.component';
+import { QRCodeModule } from 'angularx-qrcode';
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import { AcknowledgementComponent } from './acknowledgement/acknowledgement.comp
     ReactiveFormsModule,
     MaterialExampleModule,
     HttpClientModule,
+    QRCodeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

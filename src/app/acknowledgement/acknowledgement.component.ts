@@ -17,6 +17,7 @@ export class AcknowledgementComponent implements OnInit {
   acknowledgement :any = {}
   submittedData :any = {}
   acknowledgmentFlag: boolean = true
+  myAngularxQrCode: string = "";
 
   success: boolean = false
   failed: boolean = false
@@ -38,7 +39,8 @@ export class AcknowledgementComponent implements OnInit {
           if(data?.uuid){
             this.acknowledgement = data
             this.success = true
-
+            this.myAngularxQrCode = "TIN No "+data.tinNo+"\n"+
+            " Assessment Y"+data.assessmentYear
           }
         },
         error: (e) => {

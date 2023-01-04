@@ -14,6 +14,8 @@
         <p class="first">Payment Method:</p><p class="second"> {{acknowledgement.getway}}</p>
         <p class="first">Mobile No: </p><p class="second">{{acknowledgement.mobile}}</p>
         <p class="first">Time of Payment: </p><p class="second">{{acknowledgement.created_at | date}}</p>
+        <qrcode [qrdata]="myAngularxQrCode" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+
     </div>
 
     <div class="returnDetails" *ngIf="!acknowledgmentFlag">
