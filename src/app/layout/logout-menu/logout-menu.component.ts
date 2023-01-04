@@ -19,7 +19,7 @@ export class LogoutMenuComponent implements OnInit{
     let retrievedObject = this.localstorageServ.getStorageItems();
 
     if(retrievedObject.username)
-      this.username=retrievedObject.username;
+      this.username=JSON.parse(retrievedObject.username);
     else
       this.username="";
   }

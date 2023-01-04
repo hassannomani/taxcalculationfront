@@ -3,17 +3,17 @@
     text-align: center;
 }
 img.tension {
-    height: 250px;
-    width: 250px;
+    height: 150px;
+    width: 150px;
 }
 img.happy {
-    height: 224px;
+    height: 128px;
     width: auto;
 }
 .example-card {
     width: 30%;
     float: left;
-    margin-right: 3%;
+    margin-left: 3%;
   }
 img.mat-mdc-card-image.mdc-card__media {
     width: 35%;
